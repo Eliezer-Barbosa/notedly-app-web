@@ -1,8 +1,9 @@
+import Pages from "./pages";
+
 function App() {
   return (
     <div>
-      <h1>Hello Notedly!</h1>
-      <p>Welcome to the Notedly App.</p>
+      <Pages />
     </div>
   );
 }
