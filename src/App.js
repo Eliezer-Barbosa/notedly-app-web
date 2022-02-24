@@ -1,8 +1,11 @@
+import GlobalStyle from "./components/GlobalStyle";
+
 import Pages from "./pages";
 
 function App() {
   return (
     <div>
+      <GlobalStyle />
       <Pages />
     </div>
   );
