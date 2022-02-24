@@ -1,19 +1,12 @@
-import { Link } from "react-router-dom";
+import Header from "../components/Header";
+import Navigation from "../components/Navigation";
 
 const Home = () => {
   return (
     <div>
-      <h1>Notedly</h1>
+      <Header />
+      <Navigation />
       <p>This is the home page</p>
-      {/* Add a list of links */}
-      <ul>
-        <li>
-          <Link to="/mynotes">My Notes</Link>
-        </li>
-        <li>
-          <Link to="/favorites">Favorites</Link>
-        </li>
-      </ul>
     </div>
   );
 };
