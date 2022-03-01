@@ -4,7 +4,7 @@ import GlobalStyle from "./components/GlobalStyle";
 import Pages from "./pages";
 
 // configure our API URI & cache
-const uri = process.env.API_URI;
+const uri = process.env.REACT_APP_API_URI;
 const cache = new InMemoryCache();
 
 // configure Apollo Client
