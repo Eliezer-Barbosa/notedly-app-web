@@ -1,5 +1,6 @@
 import { useQuery, gql } from "@apollo/client";
 import NoteFeed from "../components/NoteFeed";
+import Button from "../components/Button";
 
 const GET_NOTES = gql`
   query noteFeed($cursor: String) {
@@ -31,7 +32,13 @@ const Home = () => {
   if (error) return <p>Error!</p>;
 
   // if the data is successful, display the data in our UI
-  return <NoteFeed notes={data.noteFeed.notes} />;
+  return (
+    <>
+      <NoteFeed notes={data.noteFeed.notes} />
+      {/* Only displays the load more button if hasNextPage is true */}
+      {data.noteFeed.hasNextPage && <Button>Load more</Button>}
+    </>
+  );
 };
 
 export default Home;
