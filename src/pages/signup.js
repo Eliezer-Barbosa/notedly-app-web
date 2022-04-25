@@ -47,8 +47,10 @@ const SignUp = (props) => {
   });
 
   const [signUp] = useMutation(SIGNUP_USER, {
-    onCompleted: (data) => {
-      console.log(data.signUp);
+    onCompleted: ({ signUp }) => {
+      console.log(signUp);
+      // store the JWT in localStorage
+      localStorage.setItem("token", signUp);
     },
   });
 
