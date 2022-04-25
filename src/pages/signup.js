@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { useMutation, useApolloClient, gql } from "@apollo/client";
 
@@ -33,6 +34,7 @@ const Form = styled.form`
 const SignUp = (props) => {
   // set the default state of the form
   const [values, setValues] = useState();
+  const navigate = useNavigate();
 
   // update the state when a user types in the form
   const onChange = ({ target }) => {
@@ -51,6 +53,8 @@ const SignUp = (props) => {
       console.log(signUp);
       // store the JWT in localStorage
       localStorage.setItem("token", signUp);
+      // redirect the user to the homepage
+      navigate("/");
     },
   });
 
